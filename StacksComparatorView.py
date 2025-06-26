@@ -28,8 +28,7 @@ def StacksComparatorView():
             collapsible=True,
         ),
         rx.cond(
-            # AppState.selected_stack_group_contexts | AppState.historical_configs,
-            True,
+            AppState.selected_stack_group_contexts | AppState.historical_configs,
             rx.card(
                 rx.card(
                     DiffContainer(AppState.selected_stack_group_contexts)
